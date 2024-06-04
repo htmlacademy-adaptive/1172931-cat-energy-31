@@ -1,0 +1,24 @@
+.socials__svg {
+  // position: absolute;
+  // top: 15px;
+  // left: auto;
+  // right: 15px;
+  width: 28px;
+  height: 20px;
+  fill: $color-icons;
+
+  @media (min-width: $tablet-width) {
+    height: 22px;
+  }
+}
+
+.socials__link[href]:hover .socials__svg,
+.socials__link[href]:focus .socials__svg {
+  opacity: 1;
+  fill: $color-icons--hover-focus-active;
+}
+
+.socials__link[href]:active .socials__svg {
+  opacity: 0.3;
+  fill: $color-icons--hover-focus-active;
+}

@@ -1,0 +1,128 @@
+
+.slider {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 256px;
+  width: 280px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 512px;
+    width: 560px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 560px;
+    height: 512px;
+  }
+}
+
+.slider__pic-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    background-image: linear-gradient(to bottom, $base-color--background 151px, $background--slider 1px);
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: linear-gradient(to bottom, $base-color--background 136px, $background--slider 1px);
+  }
+}
+
+.slider__pic-wrapper--before {
+  z-index: 1;
+  background-color: #eaeaea;
+}
+
+.slider__pic-wrapper--after {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  right: -4px;
+  // left: auto;
+  width: 100%;
+  overflow: hidden;
+  background-color: #eaeaea;
+}
+
+.slider__image {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+.slider__toggle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: $color-icons;
+  border-radius: 2px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+
+    background-color: $base-color--background;
+    border: 2px solid $color-icons;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.slider__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  fill: $color-icons;
+}
+
+.slider__toggle:hover,
+.slider__toggle:focus {
+  background-color: $color-icons--hover-focus-active;
+}
+
+.slider__toggle:active {
+  background-color: rgba($color-toggle, 0.6);
+}
+
+.slider__toggle:hover::before,
+.slider__toggle:focus::before {
+  border-color: $color-icons--hover-focus-active;
+}
+
+.slider__toggle:active::before {
+  border-color: rgba($color-toggle, 0.6);
+}
+
+
+.slider__toggle:hover .slider__icon,
+.slider__toggle:focus .slider__icon {
+  fill: $color-icons--hover-focus-active;
+}
+
+.slider__toggle:active .slider__icon {
+  fill: rgba($color-toggle, 0.6);
+}
